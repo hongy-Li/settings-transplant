@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_visibility_timeout_entries">
+        <item>2分钟</item>
+        <item >5分钟</item>
+        <item>1小时</item>
+        <item >永不超时</item>
+    </string-array>
+
+
+</resources>

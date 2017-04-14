@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <!-- Customize your theme here. -->
+
+    </style>
+    <style name="WifiAspDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <!--<item name="android:windowBackground">@mipmap/settings_dialog</item>-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+
+        <!-- 是否是黑色背景 -->
+        <!-- 模糊 -->
+    </style>
+</resources>
