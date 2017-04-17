@@ -50,13 +50,13 @@ public class BluetoothFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onResume() {
         super.onResume();
-//        mBluetoothEnabler.resume();
+        mBluetoothEnabler.resume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-//        mBluetoothEnabler.pause();
+        mBluetoothEnabler.pause();
     }
 
     public interface IOnClickListener {
@@ -102,42 +102,42 @@ public class BluetoothFragment extends Fragment implements View.OnClickListener 
         View view = View.inflate(getActivity(), R.layout.fragment_bluetooth_new, null);
         initView(view);
 
-//        if (mBluetoothSettings == null) {
-//            mBluetoothSettings = new BluetoothSettings();
-//        }
-//        mBluetoothSettings.setOnClickListener(new IOnClickListener() {
-//            @Override
-//            public void onClick(Bundle args) {
-//                changeFragment(args);
-//            }
-//
-//            @Override
-//            public void bluetoothStateChange(boolean bluetoothIsEnabled, boolean isDiscovering, int textId) {
-//                Log.i(TAG, "bluetoothIsEnabled=" + bluetoothIsEnabled + " isDiscovering=" + isDiscovering + " textId=" + textId);
-//                int menuId = bluetoothIsEnabled ? R.mipmap.menu : R.mipmap.menu_gray;
-//                tv_menue.setEnabled(bluetoothIsEnabled);
-//                tv_menue.setBackgroundResource(menuId);
-//
-//                tv_search.setText(textId);
-//                animatinState(isDiscovering);
-//                int searchId = bluetoothIsEnabled ? R.mipmap.refresh_true : R.mipmap.refresh_gray;
-//                iv_search.setBackgroundResource(searchId);
-//                rl_searchDevices.setEnabled(bluetoothIsEnabled && !isDiscovering);
-//
-//            }
-//        });
-//
-//        mContext = getActivity();
-//        initBluetooth();
-//        try {
-//            mFragmentManager = getActivity().getFragmentManager();
-//            mFragmentManager.beginTransaction().replace(R.id.fl_content_fragmentBT, mBluetoothSettings, BLUETOOTH_TAG).commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        rl_searchDevices.setOnClickListener(this);
-//        tv_menue.setOnClickListener(this);
+        if (mBluetoothSettings == null) {
+            mBluetoothSettings = new BluetoothSettings();
+        }
+        mBluetoothSettings.setOnClickListener(new IOnClickListener() {
+            @Override
+            public void onClick(Bundle args) {
+                changeFragment(args);
+            }
+
+            @Override
+            public void bluetoothStateChange(boolean bluetoothIsEnabled, boolean isDiscovering, int textId) {
+                Log.i(TAG, "bluetoothIsEnabled=" + bluetoothIsEnabled + " isDiscovering=" + isDiscovering + " textId=" + textId);
+                int menuId = bluetoothIsEnabled ? R.mipmap.menu : R.mipmap.menu_gray;
+                tv_menue.setEnabled(bluetoothIsEnabled);
+                tv_menue.setBackgroundResource(menuId);
+
+                tv_search.setText(textId);
+                animatinState(isDiscovering);
+                int searchId = bluetoothIsEnabled ? R.mipmap.refresh_true : R.mipmap.refresh_gray;
+                iv_search.setBackgroundResource(searchId);
+                rl_searchDevices.setEnabled(bluetoothIsEnabled && !isDiscovering);
+
+            }
+        });
+
+        mContext = getActivity();
+        initBluetooth();
+        try {
+            mFragmentManager = getActivity().getFragmentManager();
+            mFragmentManager.beginTransaction().replace(R.id.fl_content_fragmentBT, mBluetoothSettings, BLUETOOTH_TAG).commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        rl_searchDevices.setOnClickListener(this);
+        tv_menue.setOnClickListener(this);
         return view;
     }
 
@@ -148,8 +148,6 @@ public class BluetoothFragment extends Fragment implements View.OnClickListener 
         cb_blueOnOff = (CheckBox) view.findViewById(R.id.cb_blueOnOff);
         tv_menue = (TextView) view.findViewById(R.id.tv_menue);
         tv_search = (TextView) view.findViewById(R.id.tv_search);
-
-
 
 
     }
